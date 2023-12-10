@@ -1,0 +1,24 @@
+npm init -y #create and check package.json file updated 
+install Testcafe npm i install testcafe --save-dev #check package.json file updated 
+npx testcafe chrome tests/test1.js
+
+npx testcafe chrome tests/test1.js --live
+Console Shortcuts in Live Mode
+Ctrl+S stops the current test run
+Ctrl+R restarts the current test run
+Ctrl+W turns the file watcher off and on
+Ctrl+C closes open browsers and terminates the process
+
+TestCafe Actions
+
+1.  Click:        await t.click('#my-button');\
+2.  Type Text:    await t.typeText('#my-input', 'Hello, TestCafe!')
+3.  Double click: await t.doubleClick(Selector('#my-element'))
+4.  Right click:  await t.rightClick(Selector('#my-element'))
+5.  Hover:        await t.hover(Selector('#my-element'))
+6.  Drag n Drop:  await t.dragToElement('#drag1','#div1')
+7.  Scroll to element:  await t..scrollIntoView('#id')
+8.  Alert or Pop-up:  await t.setNativeDialogHandler(() =＞ false)
+                  await t.click('.pop-up-alert')
+9.  Wait:     await t.wait(1000)
+10. Screenshot:   Screenshot  .takeScreenshot('screenshot1.png')
