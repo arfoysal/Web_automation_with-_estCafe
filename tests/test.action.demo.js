@@ -56,3 +56,37 @@ test("Test take screenshoot action", async t => {
     await t
     .takeScreenshot("scrrenshoot.png");
 });
+
+
+
+fixture.only("Advance Action demo test")
+    .page("https://trytestingthis.netlify.app");
+
+test("Test select action", async t => {
+    const dropDown = Selector('#option');
+    const dropDownOptions = dropDown.find('option');
+    await t
+        .click(dropDown)
+        .click(dropDownOptions.withText('Option 2'))
+        .expect(dropDown.value).eql("option 2");
+
+})
+
+test("Test file upload action", async t => {
+    await t
+        .setFilesToUpload("#myfile", ['./upload/Setup.txt'])
+})
+
+test("Test window resize action", async t => {
+    await t
+        .resizeWindow(200, 500)
+        .wait(2000)
+        .resizeWindow(600, 500)
+        .wait(2000)
+        .resizeWindow(800, 500)
+        .wait(2000)
+        .resizeWindow(300, 500)
+        .wait(2000)
+        .maximizeWindow()
+        .wait(2000)
+})

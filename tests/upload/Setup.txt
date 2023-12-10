@@ -22,3 +22,17 @@ TestCafe Actions
                   await t.click('.pop-up-alert')
 9.  Wait:     await t.wait(1000)
 10. Screenshot:   Screenshot  .takeScreenshot('screenshot1.png')
+
+
+1. Select from dropdown:  const dropdown = Selector('#option'); 
+     const dropdownOptions = dropdown.find('option')
+     await t.click(dropdown)
+             await t.click(dropdownOptions.withText('Option 2'))
+     await t.expect(dropdown.value).eql('Option 2')
+2. Upload file:   await t.setFilesToUpload('#myfile', [  './uploads/abc1.txt' ])
+     await t.click('#upload-btn’)
+3. Resize browser window:  await t.resizeWindow(800, 600);
+4. Scroll page:   await t.scrollBy(0, 500);
+5. Assertion:    await t.expect(Selector('#my-element').innerText).eql('Expected Text');
+     https://testcafe.io/documentation/402... 
+6. Navigate:    await t.navigateTo('https://example.com');
